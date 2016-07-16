@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/litwick/kittab.png?label=ready&title=Ready)](https://waffle.io/litwick/kittab)
 # Kittab
 
 > A social network for schools and universities.
