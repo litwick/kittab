@@ -1,0 +1,28 @@
+<div id='container'>
+  <!-- Your html here -->
+
+  <nav class="navigation">
+    <ul>
+      <li>
+          <a  href="#/landing">landing</a>
+      </li>
+       <li>
+          <a href="#/subject">Subject</a>
+      </li>
+       <li>
+          <a class="selected" href="#/post">Post</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="links">
+  <div class="link"
+      ng-repeat="comment in data ">
+    <img src="assets/redirect_icon.png">
+    <div class="info">
+      
+      <div class="original">{{ comment}}</div>
+  </div>
+  </div>
+  </div>
