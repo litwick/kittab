@@ -6,8 +6,8 @@ var helpers = require('./helpers.js'); // our custom middleware
 
 module.exports = function (app, express) {
 
-  app.get('/', subjectController.allSubs)
-  app.post('/', subjectController.newSubject)
+  app.get('/api/landing', subjectController.allSubs)
+  app.post('/api/landing', subjectController.newSubject)
 
   app.post('/api/users/signin', userController.signin);
   app.post('/api/users/signup', userController.signup);

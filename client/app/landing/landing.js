@@ -27,7 +27,7 @@ angular.module('kittab.landing', [])
     console.log(subject);
       Subjects.selectSubject(subject)
       .then(function (){
-        $location.path('/subject');
+        $location.path('/:subject');
       })
       .catch(function (error){
         console.log(error);

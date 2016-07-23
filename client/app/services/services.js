@@ -1,64 +1,70 @@
 angular.module('kittab.services', [])
 
 .factory('Subjects', function ($http) {
-  // Your code here
+
   var newSubject="test";
 
-  var selectSubject=function (subject){
+  var selectSubject = function (subject){
     return $http({
-      method:'POST',
-      url:'/api/subject',
-      data:subject
+      method: 'POST',
+      url: '/api/:subject',
+      data: subject
     });
   };
-  var setSub = function(subject){
-         newSubject=subject ;
-         console.log(subject,"services setSub")
 
+  var setSub = function(subject){
+    newSubject = subject ;
+    console.log(subject,"services setSub")
   };
+
   var getSub = function(){
     return newSubject ;
   };
-  var getPosts=function (){
+
+  var getPosts = function (){
     return $http({
-      method:'GET',
-      url:'/api/subject'
+      method: 'GET',
+      url: '/api/:subject'
     }).then(function (resp){
       return resp.data;
     })
   };
-  var selectPost=function (post){
+
+  var selectPost = function (post){
     return $http({
-      method:'POST',
-      url:'/api/post', //we want to chech if we want to add al sf7a yle b3tt al talab aw  yle bda tst2blo
-      data:post
+      method: 'POST',
+      url: '/api/:title', //we want to chech if we want to add al sf7a yle b3tt al talab aw  yle bda tst2blo
+      data: post
     });
   };
-var getComments=function (){
+
+  var getComments = function (){
     return $http({
-      method:'GET',
-      url:'/api/post'
+      method: 'GET',
+      url: '/api/:title'
     }).then(function (resp){
       return resp.data;
     })
   };
+
   var getSubjects = function(){
     return $http({
-      method:'GET',
-      url:'/api/landing'
+      method: 'GET',
+      url: '/api/landing'
     }).then(function (resp){
       return resp.data;
     }) 
   };
-return {
-  selectSubject:selectSubject,
- getPosts:getPosts,
- selectPost:selectPost,
-  getComments:getComments,
-  getSubjects:getSubjects,
-  getSub:getSub,
-  setSub:setSub
-  }
+
+  return {
+    selectSubject: selectSubject,
+    getPosts: getPosts,
+    selectPost: selectPost,
+    getComments: getComments,
+    getSubjects: getSubjects,
+    getSub: getSub,
+    setSub: setSub
+    }
   })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!

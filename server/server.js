@@ -5,6 +5,7 @@ var app = express();
 
 // connect to mongo database named "kittab"
 mongoose.connect('mongodb://localhost/kittab');
+
 // configure our server with all the middleware and routing
 require('./config/middleware.js')(app, express);
 require('./config/routes.js')(app, express);

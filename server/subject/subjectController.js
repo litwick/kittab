@@ -21,7 +21,7 @@ module.exports = {
 	},
 
 	newSubject: function (req, res, next){
-		var name = req.body.name;
+		var name = req.body.name.replace(" ", "");
 		var desc = req.body.description;
 
 	    //createSubject({name: name, description: desc})
@@ -51,7 +51,7 @@ module.exports = {
 	},
 
 	newPost: function (req, res, next) {
-		var title = req.body.title;
+		var title = req.body.title.trim().replace(" ", "_");
 		var text = req.body.text;
 
 		findSubject({name: req.params.subject})

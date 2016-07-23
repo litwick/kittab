@@ -3,7 +3,7 @@ angular.module('kittab', [
   'kittab.landing',
   'kittab.subject',
   'kittab.post',
-  'shortly.auth',
+  'kittab.auth',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
@@ -16,19 +16,17 @@ angular.module('kittab', [
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
-    // Your code here
-
     .when('/landing', {
       templateUrl: 'app/landing/landing.html',
       controller: 'landingController',
       authenticate: true
     })
-    .when('/subject', {
+    .when('/:subject', {
       templateUrl: 'app/subject/subject.html',
       controller: 'subjectController',
       authenticate: true
     })
-    .when('/post', {
+    .when('/:title', {
       templateUrl: 'app/post/post.html',
       controller: 'postController',
       authenticate: true
