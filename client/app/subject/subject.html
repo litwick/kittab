@@ -1,0 +1,78 @@
+<div id='container'>
+<!-- Your code here -->
+
+  <nav class="navigation">
+    <ul>
+      <li>
+          <a href="#/landing">Landing</a>
+      </li>
+       <li>
+          <a class='selected' href="#/subject">Subject</a>
+      </li>
+       <li>
+          <a href="#/post">Post</a>
+    
+      </li>
+    </ul>
+  </nav>
+ 
+
+
+ <div>
+ <form  ng-submit="addPost()">
+   <input type="text" name="post" ng-model="post.title"
+     placeholder="enter post title">
+   <input  type="text"  name="post" ng-model="post.text"
+    placeholder="enter post text">
+   <button  type="submit">add Post</button>
+ </form>
+ </div>
+
+  <div >{{subject}}</div>
+<div class="links">
+  <div class="link"
+
+      ng-repeat="post in data.posts ">
+    <img src="assets/redirect_icon.png">
+    <div class="info">
+      <div class="visits">
+      <!-- <div class="vote chev">
+              <div class="increment up" ></div>
+              <div class="increment down" ></div>
+              <div class="count">0</div>
+
+              </div>
+ -->
+
+      
+               
+  
+
+
+
+                  
+      <div class="title" ng-click="viewPost(post.title)">{{ post.title }}</div>
+      <div class="original">{{ post.text }}</div>
+      <div class="original">{{ post.subjectName.name}}</div>
+    </div>
+  </div>
+  </div>
+    <!--     <script>
+  function voting(){
+  $(".increment").click(function(){
+    var count = parseInt($("~ .count", this).text());
+    
+    if($(this).hasClass("up")) {
+      var count = count + 1;
+      
+       $("~ .count", this).text(count);
+    } else {
+      var count = count - 1;
+       $("~ .count", this).text(count);     
+    }
+    
+  });
+};
+
+        
+      </script> -->
