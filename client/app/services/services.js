@@ -56,7 +56,6 @@ angular.module('kittab.services', [])
   };
 
   var getSubjects = function(){
-    console.log("service get")
     return $http({
       method:'GET',
       url:'/api/landing'

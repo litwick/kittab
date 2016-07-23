@@ -12,7 +12,6 @@ angular.module('kittab.landing', [])
   var init=function (){
   Subjects.getSubjects()
   .then(function(subject){
-    console.log(subject);
     $scope.data=subject;
 
 
