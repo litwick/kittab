@@ -4,12 +4,14 @@ var Comment = require('../comments/commentModel.js');
 var PostSchema = new mongoose.Schema({
  title: {
 		type: String,
-		required: true
+		required: true,
+		unique: true
 	},
  text: String,
  upvote: Number,
  downvote: Number,
- comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
+ _subject: String,
+ //comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });
 
 

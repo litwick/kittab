@@ -1,6 +1,6 @@
 angular.module('kittab.landing', [])
 
-.controller('landingController', function ($scope,$location,Subjects) {
+.controller('landingController', function ($scope, $location, Subjects) {
   // Your code here
     $scope.data=[];
   // $scope.data = ["Calculus","Physics","Chemistry",
@@ -24,11 +24,12 @@ angular.module('kittab.landing', [])
 init();
 
   $scope.viewSubject=function (subject){
-   // Subjects.setSub(subject);
+   Subjects.setSub(subject);
    //  console.log(subject);
       Subjects.selectSubject(subject)
       .then(function (){
-        $location.path('/subject');
+        $location.path('/' + subject);
+
       })
       .catch(function (error){
         console.log(error);

@@ -23,20 +23,15 @@ angular.module('kittab', [
       controller: 'landingController'
       //authenticate: true
     })
-     .when('/landing/:subject', {
-      templateUrl: 'app/landing/landing.html',
-      controller: 'landingController'
-      //authenticate: true
-    })
-    .when('/subject', {
+    .when('/:subject', {
       templateUrl: 'app/subject/subject.html',
       controller: 'subjectController'
       //authenticate: true
     })
-    .when('/post', {
+    .when('/:subject/comments/:title', {
       templateUrl: 'app/post/post.html',
       controller: 'postController',
-      authenticate: true
+      //authenticate: true
     })
     .otherwise({
       redirectTo: '/landing'

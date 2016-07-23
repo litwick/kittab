@@ -9,12 +9,7 @@ var findAllPosts = Q.nbind(Post.find, Post);
 module.exports = {
 
   allPosts: function (req, res, next) {
-    Post
-    .find({})
-    .populate('_subject')
-    .exec(function (err, post) {
-        if (err) return console.log(err);
-    })
+    findAllPosts({_subject: req.params.subject})
     .then(function(posts){
       res.json(posts)
     })
@@ -25,24 +20,17 @@ module.exports = {
 
     findPost({title: req.params.title})
       .then(function(post){
-        post.save(function (err) {
-          if (err) return console.log(err);
-          
-          var comment = new Comment({
+        var comment = new Comment({
             text: text,
-            _post: post._id    
+            _post: post.title    
           });
-          
+
           comment.save(function (err) {
             if (err) return console.log(err);
-          });
-        });
+          })
+
         return Comment
-        .find({})
-        .populate('_post')
-        .exec(function (err, post) {
-            if (err) return console.log(err);
-        });
+        .find({_post: post.title})
       })
       .then(function(comments){
         res.json(comments)

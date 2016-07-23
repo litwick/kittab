@@ -1,48 +1,60 @@
 angular.module('kittab.services', [])
 
 .factory('Subjects', function ($http) {
-  // Your code here
-  var newSubject="test";
+  var newSubject = "";
+   var newPost="test";
 
   var selectSubject=function (subject){
     return $http({
       method:'GET',
-      url:'/api/landing/:'+subject,
+      url:'/api/'+ subject,
     }).then(function (resp){
       return resp.data;
     })
   };
-  var setSub = function(subject){
-         newSubject=subject ;
-         console.log(subject,"services setSub")
 
+  var setSub = function(subject){
+    newSubject = subject ;
   };
+
   var getSub = function(){
     return newSubject ;
   };
-  var getPosts=function (){
+  var setPos = function(post){
+    newPost = post ;
+  };
+
+  var getPos = function(){
+    return newPost;
+  }
+
+  var getPosts = function (subject){
     return $http({
       method:'GET',
-      url:'/api/subject'
+      url:'/api/' + subject
     }).then(function (resp){
       return resp.data;
     })
   };
-  var selectPost=function (post){
+
+  var selectPost=function (subject, post){
     return $http({
-      method:'POST',
-      url:'/api/post', //we want to chech if we want to add al sf7a yle b3tt al talab aw  yle bda tst2blo
-      data:post
+      method:'GET',
+      url:'/api/'+subject+'/comments/'+post
+    }).then(function (resp){
+      return resp.data;
     });
   };
-var getComments=function (){
+
+  var getComments=function (subject, post){
     return $http({
       method:'GET',
-      url:'/api/post'
+      url:'/api/'+subject+'/comments/'+post
     }).then(function (resp){
       return resp.data;
     })
   };
+
   var getSubjects = function(){
     console.log("service get")
     return $http({
@@ -59,23 +71,34 @@ var getComments=function (){
       data : str 
     }) 
   }
-  var addingPost=function(post){
+  var addingPost=function(subject, post){
       return $http({
          method:'POST',
-         url:'/api/subject',
+         url:'/api/' + subject,
          data:post
       })
+    }
+  var addingComment=function(subject, post,comment){
+      return $http({
+         method:'POST',
+         url:'/api/' + subject+'/comments/'+post,
+         data:comment
+      })
+
   }
 return {
   selectSubject:selectSubject,
- getPosts:getPosts,
- selectPost:selectPost,
+  getPosts:getPosts,
+  selectPost:selectPost,
   getComments:getComments,
   getSubjects:getSubjects,
   getSub:getSub,
   setSub:setSub,
   vote:vote,
-  addingPost:addingPost
+  addingPost:addingPost,
+  getPos:getPos,
+  setPos:setPos,
+  addingComment:addingComment
   }
   })
 .factory('Auth', function ($http, $location, $window) {

@@ -1,61 +1,27 @@
 angular.module('kittab.subject', [])
 
-.controller('subjectController', function ($scope,Subjects) {
+.controller('subjectController', function ($scope, $location, Subjects) {
   $scope.data={};
-
-// $scope.data={posts:[{title:"ola",
-// text:"xckasnfckacvndjvkjskjv", 
-// upVote:0,
-// downVote:0},{title:"sarya",
-// text:"hgxwhjdgfvekhvbkfbk,gnvjj", 
-// upVote:1,
-// downVote:-2},{title:"ammar",
-// text:"hgxwhjdgfvekhvbkfbk,gnvjj", 
-// upVote:1,
-// downVote:-2}]};
-//  $scope.subject=Subjects.getSub();
-//  console.log($scope.subject,"kkkkk");
-
-var init=function (){
-  Subjects.getPosts()
-  .then(function(posts){
-    console.log(posts);
-    $scope.data.posts=posts;
+  $scope.subject = Subjects.getSub()
+  var init = function (){
+    Subjects.getPosts($scope.subject)
+    .then(function(posts){
+      console.log(posts);
+      $scope.data.posts = posts;
+    }).catch(function (error){
+          console.log(error);
+    });
+     
+  } 
+  init();
 
 
-  }).catch(function (error){
-        console.log(error);
-  });
-   
-}
-init();
-// $scope.up=0;
-// $scope.down=0;
-
-
-// $scope.upVote= function(vote){
-// $scope.up=vote+1;
-//      console.log($scope.up);
-
-// }
-// $scope.downVote= function(vote){
-//  $scope.down=vote--;
-//      console.log($scope.down);
-
-// }
-
-
- // $scope.changeVote = function(vote, flag){
- //    $scope.vote = vote==flag?'None':flag;
- //    console.log($scope.vote);
- //    Subjects.vote($scope.vote);
-
- //  };
 
 $scope.addPost=function(){
-  Subjects.addingPost($scope.post)
+  Subjects.addingPost($scope.subject, $scope.post)
   .then(function(){
     console.log("post added");
+    init();
      // $location.path("/subject");
   })
   .catch(function (error){
@@ -66,10 +32,12 @@ $scope.addPost=function(){
 
 
 $scope.viewPost=function (post){
-  console.log(post);
-      Subjects.selectPost(post)
+      console.log(post);
+      Subjects.setPos(post);
+      Subjects.selectPost($scope.subject, post)
       .then(function(){
-        $location.path('/post');
+        $location.path('/'+$scope.subject+'/comments/'+post);
+
       })
       .catch(function (error){
         console.log(error);

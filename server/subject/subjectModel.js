@@ -8,7 +8,7 @@ var SubjectSchema = new mongoose.Schema({
 		unique: true
 	},
  description: String,
- posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }]
+ //posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }]
 });
 
 

@@ -56,28 +56,24 @@ module.exports = {
 
 		findSubject({name: req.params.subject})
 			.then(function(subj){
-				subj.save(function (err) {
-				  if (err) return console.log(err);
-				  
 				  var post = new Post({
 				    title: title,
 				    text: text,
-				    _subject: subj._id    
+				    _subject: subj.name    
 				  });
-				  
+
 				  post.save(function (err) {
 				    if (err) return console.log(err);
-				  });
-				});
+				  })
+
 				return Post
-				.find({})
-				.populate('_subject')
-				.exec(function (err, post) {
-					  if (err) return console.log(err);
-				});
+				.find({_subject: subj.name})
 			})
 			.then(function(posts){
 				res.json(posts)
+			})
+			.fail(function(err){
+				console.log(err)
 			})
 	}
 

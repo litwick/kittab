@@ -17,12 +17,20 @@
 </div>
 
 <div class="links">
+<div>
+ <form  ng-submit="addComment()">
+   <input  type="text"  name="comment" ng-model="comment.text"
+    placeholder="enter your comment">
+   <button  type="submit">add Comment</button>
+ </form>
+ </div>
+
   <div class="link"
-      ng-repeat="comment in data ">
+      ng-repeat="comment in data.comments">
     <img src="assets/redirect_icon.png">
     <div class="info">
       
-      <div class="original">{{ comment}}</div>
+      <div class="original">{{comment.text}}</div>
   </div>
   </div>
   </div>
