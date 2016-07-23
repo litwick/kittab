@@ -6,73 +6,42 @@
       <li>
           <a href="/#/">Landing</a>
       </li>
-       <li>
-          <a class='selected' href="#/subject">Subject</a>
-      </li>
-       <li>
-          <a href="#/post">Post</a>
-    
-      </li>
+      <li>
+          <a class="selected" href="#/signin">Sign In</a>
+          </li>
+          <li><a class = "selected" href="#/signup">Sign Up</a></li>
+    </ul>
     </ul>
   </nav>
  
 
+ <div class="s">{{name}}</div>
 
- <div>
- <form  ng-submit="addPost()">
-   <input type="text" name="post" ng-model="post.title"
-     placeholder="enter post title">
-   <input  type="text"  name="post" ng-model="post.text"
-    placeholder="enter post text">
-   <button  type="submit">add Post</button>
- </form>
- </div>
-
-  <div >{{name}}</div>
+ 
 <div class="links">
   <div class="link"
 
       ng-repeat="post in data.posts ">
-    <img src="assets/redirect_icon.png">
+    <img src="assets/image.png">
+    <br>
+    <br>
     <div class="info">
-      <div class="visits">
-      <!-- <div class="vote chev">
-              <div class="increment up" ></div>
-              <div class="increment down" ></div>
-              <div class="count">0</div>
-
-              </div>
- -->
-
-      
-               
-  
-
-
-
-                  
+      <div class="original">           
       <div class="title" ng-click="viewPost(post.title)">{{ post.title }}</div>
       <div class="original">{{ post.text }}</div>
       <div class="original">{{ post.subjectName.name}}</div>
     </div>
   </div>
   </div>
-    <!--     <script>
-  function voting(){
-  $(".increment").click(function(){
-    var count = parseInt($("~ .count", this).text());
-    
-    if($(this).hasClass("up")) {
-      var count = count + 1;
-      
-       $("~ .count", this).text(count);
-    } else {
-      var count = count - 1;
-       $("~ .count", this).text(count);     
-    }
-    
-  });
-};
-
-        
-      </script> -->
+    <br>
+    <br>
+ <div class="rcorners6">
+<h3>  add your post</h3>
+ <form  ng-submit="addPost()">
+   <input type="text" name="post" ng-model="post.title"
+     placeholder="enter post title">
+   <input  style='height:80px' type="text"  name="post" ng-model="post.text"
+    placeholder="enter post text">
+   <button class='addbutton' type="submit">add Post</button>
+ </form>
+ </div>

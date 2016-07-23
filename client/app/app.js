@@ -3,7 +3,7 @@ angular.module('kittab', [
   'kittab.landing',
   'kittab.subject',
   'kittab.post',
-  'shortly.auth',
+  'kittab.auth',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
@@ -20,18 +20,18 @@ angular.module('kittab', [
 
     .when('/', {
       templateUrl: 'app/landing/landing.html',
-      controller: 'landingController'
-      //authenticate: true
+      controller: 'landingController',
+      authenticate: true
     })
     .when('/:subject', {
       templateUrl: 'app/subject/subject.html',
-      controller: 'subjectController'
-      //authenticate: true
+      controller: 'subjectController',
+      authenticate: true
     })
     .when('/:subject/comments/:title', {
       templateUrl: 'app/post/post.html',
       controller: 'postController',
-      //authenticate: true
+      authenticate: true
     })
     .otherwise({
       redirectTo: '/'
@@ -48,7 +48,7 @@ angular.module('kittab', [
   // then add it to the header so the server can validate the request
   var attach = {
     request: function (object) {
-      var jwt = $window.localStorage.getItem('com.shortly');
+      var jwt = $window.localStorage.getItem('com.kittab');
       if (jwt) {
         object.headers['x-access-token'] = jwt;
       }
@@ -66,9 +66,9 @@ angular.module('kittab', [
   // when it does change routes, we then look for the token in localstorage
   // and send that token to the server to see if it is a real user or hasn't expired
   // if it's not valid, we then redirect back to signin/signup
-  // $rootScope.$on('$routeChangeStart', function (evt, next, current) {
-  //   if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
-  //     $location.path('/signin');
-  //   }
-  // });
+  $rootScope.$on('$routeChangeStart', function (evt, next, current) {
+    if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
+      $location.path('/signin');
+    }
+  });
 });

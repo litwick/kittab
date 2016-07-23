@@ -1,36 +1,38 @@
 <div id='container'>
   <!-- Your html here -->
 
-  <nav class="navigation">
+   <nav class="navigation">
     <ul>
       <li>
-          <a  href="/#/">landing</a>
+          <a href="/#/">Landing</a>
       </li>
-       <li>
-          <a href="#/subject">Subject</a>
-      </li>
-       <li>
-          <a class="selected" href="#/post">Post</a>
-      </li>
+      <li>
+          <a class="selected" href="#/signin">Sign In</a>
+          </li>
+          <li><a class = "selected" href="#/signup">Sign Up</a></li>
+    </ul>
     </ul>
   </nav>
 </div>
 
-<div class="links">
-<div>
- <form  ng-submit="addComment()">
-   <input  type="text"  name="comment" ng-model="comment.text"
-    placeholder="enter your comment">
-   <button  type="submit">add Comment</button>
- </form>
- </div>
-
   <div class="link"
       ng-repeat="comment in data.comments">
-    <img src="assets/redirect_icon.png">
+         <img src="assets/comment.jpg">
+          <br>
+      <br>
+
     <div class="info">
       
       <div class="original">{{comment.text}}</div>
   </div>
   </div>
   </div>
+
+<div id="rcorners5">
+<div>
+ <form  ng-submit="addComment()">
+   <input  type="text" style="height:60px "  name="comment" ng-model="comment.text"
+    placeholder="enter your comment">
+   <button class='addbutton' type="submit">add Comment</button>
+ </form>
+ </div>

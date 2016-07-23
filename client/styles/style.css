@@ -1,24 +1,39 @@
+@import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
 body {
+  background-color: #e6f3ff;
   margin: 0;
   margin-top: 10px;
   font-family: arial, sans-serif;
 }
 
 a {
-  color: #333;
+  color: white;
   font-size: 14px;
   text-decoration: none;
 }
 
 h1 {
+  background-image: url(coollogo_com-1044064.png);
+  background-repeat: no-repeat;
+  background-position:top ;
+  float: top;
   font-style: italic;
-  margin-bottom: 10px;
+  text-align: center;
+  font-size: 60px; 
+  font-weight: bold;
+  border-collapse: 1px
+  width:200px;
+  /*border:1px solid #20B2AA;*/
+  height:80px; 
+ color : grey;
 }
+
 
 .navigation {
   width: 100%;
   height: 40px;
-  background-color: #eee;
+  background-color: #004d99;
 }
 
 .navigation ul {
@@ -38,15 +53,43 @@ h1 {
   padding: 10px;
   display: block;
   text-align: center;
+  font-color:white;
 }
 
 .navigation li a:hover {
-  background-color: #ddd;
+  background-color: black;
 }
 
-.navigation li a.selected {
-  background-color: #ccc;
+
+
+
+
+
+/*.navigation{
+    list-style-type:  cjk-ideographic;
+    margin: 10;
+    padding: 10;
+    width: 12%;
+    background-color: #20B2AA;
+    height: 100%; 
+    position: fixed; 
+    overflow: fixed;
+    display:block;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: solid #000000 1px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    border-color: black;
+   overflow: auto;
 }
+.navigation  a.selected {
+  font-size : 30px;
+  padding: 10px;
+  border:5px;
+
+}*/
 
 #container {
   clear: both;
@@ -85,7 +128,7 @@ h1 {
 }
 
 .link .original {
-  color: #aaa;
+  color: black;
   font-size: 12px;
 }
 
@@ -146,89 +189,73 @@ input[type=url]:focus {
   clear: both;
 }
 
+a:hover {
 
-
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
-/* try 50% */
-
-
-.chev .up {
-  border-radius: 50% 50% 0 0;
+  background-color: grey;
 }
-.chev .down {
-  border-radius: 0 0 50% 50%;
-}
-.chev .count {
-  border-radius: 100%/50%;
-}
-
-.vote {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-family: "Noto Sans";
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-  margin: 1rem;
+.button {
+  background-color: #004d99; 
+   font-weight: bold;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    margin: 30px;
+    float: center;
+  }
+  button:hover {
+  background-color: black;
 }
 
-.increment {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 0;
-      -ms-flex: 1 0 0;
-          flex: 1 0 0;
-  text-align: center;
-  opacity: .5;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.increment.up {
-  background: #4BC35F;
-  height: 50%;
-  margin-bottom: 0.25rem;
-}
-.increment.down {
-  background: #C15044;
-  height: 50%;
-}
-.increment:hover {
-  opacity: 1;
+.search {
+  margin: 100px auto;
+  width: 400px;
+  height: 30px;
+  font-size : 20px;
 }
 
-.count {
-  position: absolute;
-  top: 0;
-  border-radius: 0.1rem;
-  margin: 2.5rem;
-  background: #F6F3E4;
-  width: 5rem;
-  font-size: 2.5rem;
+.title{
+  font-size : 20px;
   font-weight: bold;
-  line-height: 5rem;
+  font-color:black;
+}
+
+.s{
   text-align: center;
-  box-shadow: 0 0 0 0.5rem #F6F3E4;
-  pointer-events: none;
-}
-.count.upvoted {
-  color: #4BC35F;
-}
-.count.downvoted {
-  color: #C15044;
+  font-size: 50px;
+  font-weight: bold;
 }
 
+.addbutton{
+  background-color: #004d99; 
+   font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    width: 100px;
+    height: 50px;
+    margin: 30px;
+    float: left;
+}
+.rcorners6 {
+    border-radius: 15px 50px;
+    background:lightblue;
+    padding: 20px; 
+    width: 500px;
+    height: 260px; 
 
-
-
-
-
-
-
-
+}
+#rcorners5{
+      border-radius: 15px 50px;
+    background:lightblue;
+    padding: 20px; 
+    width: 400px;
+    height: 160px; 
+}

@@ -1,25 +1,19 @@
 <div id='container'>
   <!-- Your html here -->
 
-  <nav class="navigation">
+   <nav class="navigation">
     <ul>
       <li>
-          <a class="selected" href="/#/">Landing</a>
-      </li>
-       <li>
-          <a href="#/subject">Subject</a>
-      </li>
-       <li>
-          <a href="#/post">Post</a>
-      </li>
+          <a class="selected" href="#/signin">Sign In</a>
+          </li>
+          <li><a class = "selected" href="#/signup">Sign Up</a></li>
     </ul>
   </nav>
 </div>
 <div>
 <form >
-<label>Subjects :</label>
-<input type="text" placeholder="Enter Subject Name" ng-model="search"></input>
-<button  ng-click="viewSubject(subject.name)" ng-repeat="subject in data |filter:search | orderBy:subject" >{{subject.name}}</button>
+<input type="text" class= 'search' placeholder="Enter Subject Name" ng-model="search"></input>
+<button  class='button' ng-click="viewSubject(subject.name)" ng-repeat="subject in data |filter:search | orderBy:subject" >{{subject.name}}</button>
 </form>
 </div>
 
