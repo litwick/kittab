@@ -1,13 +1,13 @@
 [![Stories in Ready](https://badge.waffle.io/litwick/kittab.png?label=ready&title=Ready)](https://waffle.io/litwick/kittab)
 # Kittab
 
-> A social network for schools and universities.
+> A social network for schools and universities. Where students can go and ask questions, and their teachers can answer.
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Saif Elokour
+  - __Scrum Master__: Ola Al-Khateeb
+  - __Development Team Members__: Sarya Al-Sayed
 
 ## Table of Contents
 
@@ -21,15 +21,14 @@
 
 ## Usage
 
-> Some usage instructions
+> Choose a subject, or create a new one. Post a question or observation, and comment on other posts.
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Node v4.4.5
+- Express
+- MongoDB
+- Angular
 
 ## Development
 

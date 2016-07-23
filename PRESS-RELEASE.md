@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Kittab.
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Where you go to learn academics from your own educators.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > If you were wondering how you were going to figure out the answer to that question your professor gave you, then look no further. Just post your question, and wait for some of the most intelligent people, from your own school or university to help you find the answer. Even your teacher might be there to help.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Student getting stumpted after searching endlessly for a good explaination to their school problems.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > A single place for student to find answers to questions they get asked to solve at school, when they've exausted  every other resource.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > It's a friendly community of students and teachers, where everybody helps each other understand new concepts.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Just choose the subject you want to ask about and post a question.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > I was struggling for hours trying to understand something I had learned at school, and a lot of nice people helped explain it to me.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > If you're lokking for a place to get great explainations from great teachers, visit Kittab.

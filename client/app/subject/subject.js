@@ -18,7 +18,7 @@ angular.module('kittab.subject', [])
 
 
 $scope.addPost=function(){
-  Subjects.addingPost($scope.subject, $scope.post)
+  Subjects.addingPost($scope.subject[1], $scope.post)
   .then(function(){
     init();
   })
