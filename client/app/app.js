@@ -18,7 +18,7 @@ angular.module('kittab', [
     })
     // Your code here
 
-    .when('/landing', {
+    .when('/', {
       templateUrl: 'app/landing/landing.html',
       controller: 'landingController'
       //authenticate: true
@@ -34,7 +34,7 @@ angular.module('kittab', [
       //authenticate: true
     })
     .otherwise({
-      redirectTo: '/landing'
+      redirectTo: '/'
     });
     
     // We add our $httpInterceptor into the array

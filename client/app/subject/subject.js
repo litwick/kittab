@@ -2,9 +2,11 @@ angular.module('kittab.subject', [])
 
 .controller('subjectController', function ($scope, $location, Subjects) {
   $scope.data={};
-  $scope.subject = Subjects.getSub()
+  $scope.subject = $location.path().split('/')
+  $scope.name = $scope.subject[1]
   var init = function (){
-    Subjects.getPosts($scope.subject)
+    console.log($scope.subject)
+    Subjects.getPosts($scope.subject[1])
     .then(function(posts){
       console.log(posts);
       $scope.data.posts = posts;
@@ -22,7 +24,6 @@ $scope.addPost=function(){
   .then(function(){
     console.log("post added");
     init();
-     // $location.path("/subject");
   })
   .catch(function (error){
     console.log(error);
@@ -32,8 +33,8 @@ $scope.addPost=function(){
 
 
 $scope.viewPost=function (post){
-      console.log(post);
-      Subjects.setPos(post);
+    console.log($scope.subject)
+      // Subjects.setPos(post);
       Subjects.selectPost($scope.subject, post)
       .then(function(){
         $location.path('/'+$scope.subject+'/comments/'+post);

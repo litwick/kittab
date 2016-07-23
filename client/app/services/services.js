@@ -40,7 +40,7 @@ angular.module('kittab.services', [])
   var selectPost=function (subject, post){
     return $http({
       method:'GET',
-      url:'/api/'+subject+'/comments/'+post
+      url:'/api/'+ subject + '/comments/' +post
     }).then(function (resp){
       return resp.data;
     });
@@ -49,7 +49,7 @@ angular.module('kittab.services', [])
   var getComments=function (subject, post){
     return $http({
       method:'GET',
-      url:'/api/'+subject+'/comments/'+post
+      url:'/api/' + subject + '/comments/' + post
     }).then(function (resp){
       return resp.data;
     })

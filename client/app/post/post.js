@@ -1,16 +1,15 @@
 angular.module('kittab.post', [])
 
-.controller('postController', function ($scope, Subjects) {
+.controller('postController', function ($scope, $location, Subjects) {
   
    $scope.data = {} 
-   $scope.subject=Subjects.getSub();
-   $scope.post=Subjects.getPos();
+   $scope.path = $location.path().split('/');
 
   var init = function () {
-    Subjects.getComments($scope.subject, $scope.post)
+
+    Subjects.getComments($scope.path[1], $scope.path[3])
       .then(function (comments) {
         $scope.data.comments = comments;
-        console.log($scope.data.comments)
       })
       .catch(function (error) {
         console.error(error);
@@ -18,10 +17,9 @@ angular.module('kittab.post', [])
   };
 
   init();
-$scope.addComment=function(){
-  Subjects.addingComment($scope.subject, $scope.post,$scope.comment)
+$scope.addComment = function(){
+  Subjects.addingComment($scope.path[1], $scope.path[3], $scope.comment)
   .then(function(){
-    console.log("Comment added");
     init();
      // $location.path("/subject");
   })
